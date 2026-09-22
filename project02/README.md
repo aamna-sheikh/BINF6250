@@ -88,7 +88,79 @@ Note: The provided test uses the text "one fish two fish red fish blue red fish 
  
  ```
 
-3. Generate text from Markov Model
+3. Generate text from Markov Model - Get Next Word
+
+This function is used to find the next predicted word in a given markov model using a current word and calculated probabilities.
+
+    GET the list of options for the Markov model to choose from using the list of keys in the dictionary of the current word. This requires converting the list of dictionary keys into a list to bypass Python typing issues.
+
+    GET the list of weights for each word by collecting the values from the dictionary of the current word. This requires converting the list of values into a list, and then into a NumPy array to bypass Python typing issues.
+
+    CALCULATE the sum of weights.
+
+    FIND the next predicted word using NumPy random choice based on the options and weights previously retrieved.
+
+    RETURN the predicted next word.
+
+4. Generate text from Markov Model - Generate Random Text
+
+This function is used to generate a full piece of text given a trained Markov model.
+
+    START by setting the numpy random seed to the given argument.
+
+    INITIALIZE a list of words to store the predicted text.
+    
+    FIND the order of the Markov model by finding the number of words within one of the dictionary keys.
+
+    SET a starting context using the start token \*S\* multiplied by the previously found order.
+
+    LOOP until the end token \*E\* is predicted. Within each iteration:
+
+        PREDICT the next word given the current context using the previously defined "Get Next Word" method.
+
+        IF the next word is not the end token \*E\*:
+            
+            ADD the predicted word to the list of words.
+
+        ADD the predicted word to the current context.
+        
+        REMOVE the oldest word from the current context.
+    
+    WHEN the end token \*E\* is added to the current context:
+
+        END the loop.
+
+        JOIN the predicted words using spaces into one string.
+
+    RETURN the full predicted text.
+
+5. All the Fish:
+
+This cell is used to test the Markov model generation scheme implemented.
+
+    INITIALIZE an empty dictionary as a Markov model.
+
+    OPEN the file for one_fish_two_fish.txt.
+
+    READ the data using open.
+
+    FOR each individual line of the file, TRAIN the Markov model using previously implemented methods, allowing the model to learn the beginning and end of each line.
+
+    GENERATE AND PRINT predicted text using the previously implemented methods.
+
+6. Pick your Poison:
+
+This cell is used to explore the application of Markov models on another text option. We chose to explore Shakespeare's sonnets.
+
+    INITIALIZE an empty dictionary as a Markov model.
+
+    Open the file for sonnets.txt.
+
+    SPLIT the lines for the sonnets text by line break.
+
+    FOR each sonnet, TRAIN the Markov model using previously implemented methods
+
+GENERATE AND PRINT predicted text using the previously implemented methods.
 
 
 
@@ -103,7 +175,11 @@ Description of the stumbling blocks the team experienced
 Group leader's reflection on the project
 
 ## Other member
-Other members' reflections on the project
+
+## Justin:
+
+As a late joiner to this course, I used this project as a way to be introduced to the course's structure and work style. I am generally comfortable with Git and did not have too many issues with understanding the project's structure. I found the collaborative style of work meaningful and feel much more prepared going into next week.
+
 
 # Generative AI Appendix
 As per the syllabus
