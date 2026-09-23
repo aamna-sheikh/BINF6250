@@ -91,6 +91,7 @@ Note: The provided test uses the text "one fish two fish red fish blue red fish 
 
 This function is used to find the next predicted word in a given Markov model using a current word and calculated probabilities.
 
+```
 get all the possible next words from the current state
 
 ADD the transition counts to find the total number of transitions
@@ -104,6 +105,7 @@ IF a seed is provided:
 RANDOMLY select the next word based on the probabilities
 
 RETURN the selected word
+```
 
 # Example Test and Output:
 
@@ -123,6 +125,7 @@ Word selected with seed 42: red
 
 4. Generate text from Markov Model - Generate Random Text
 
+```
 SET the random seed
 
 get the first state from the maarkov model
@@ -146,12 +149,13 @@ LOOP until *E* is selected:
 join the generated words together
 
 RETURN the completed sentence
-
+```
 
 5. All the Fish:
 
 This cell is used to test the Markov model generation scheme implemented.
 
+```
     INITIALIZE an empty dictionary as a Markov model.
 
     OPEN the file for one_fish_two_fish.txt.
@@ -161,12 +165,13 @@ This cell is used to test the Markov model generation scheme implemented.
     FOR each individual line of the file, TRAIN the Markov model using previously implemented methods, allowing the model to learn the beginning and end of each line.
 
 call generate_random_text on the trained model and print the results
-
+```
 
 6. Pick your Poison:
 
 This cell is used to explore the application of Markov models on another text option. We chose to explore Shakespeare's sonnets.
 
+```
     INITIALIZE an empty dictionary as a Markov model.
 
     Open the file for sonnets.txt.
@@ -176,7 +181,7 @@ This cell is used to explore the application of Markov models on another text op
     FOR each sonnet, TRAIN the Markov model using previously implemented methods
 
 call generate_random_text on the trained model and print the results
-
+```
 
 # Successes
 - Despite all the changes to our group, we were still able to meet a few times face-to-face and talk through the structure of the project and our different approaches to the code.
@@ -218,4 +223,4 @@ Understanding Random Seed
 I asked, “how does a random seed work in context to Markov models? why would we want to set in a specific random seed when the point of this function is to generate randomized text?” I used this to understand the logic behind setting a seed and its need when testing.
 
 Pseudocode and Commenting
-I asked, “can you help me make the pseudocode blocks match stylistically and make it less wordy? I originally wrote this out when I was still wrapping my head around the concept of Markov chains and felt as though the pseudocode was too wordy. It was able to quickly point out the areas that needed to be shortened although I did not get enough time to implement all of the suggestions it made.
+I asked, “can you help me make the pseudocode blocks consistent and make it less wordy? I originally wrote this out when I was still wrapping my head around the concept of Markov chains and felt as though the pseudocode was too wordy. It was able to quickly point out the areas that needed to be shortened although I did not get enough time to implement all of the suggestions it made.
